@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+
+<html lang="en" ⚠️amp="" html="⚠️amp">
+<head><script async="" src="https://cdn.ampproject.org/v0.js"></script>
+<meta charset="utf-8"/>
+<meta content="f963aa94a2290708396ab88c1d264afb" name="monetag"/>
+<title>ULTIMATE Gen Z Outfit Lender</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        :root {
+            --primary: #ff4d89;
+            --secondary: #6e45e2;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --accent: #00ff88;
+            --text: #333;
+            --card-bg: #fff;
+            --header-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --glitter: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path fill="gold" d="M20,20 L30,10 L40,20 L30,30 Z" opacity="0.8"/><path fill="pink" d="M60,60 L70,50 L80,60 L70,70 Z" opacity="0.6"/></svg>');
+        }
+
+        /* Dark mode */
+        body.dark-mode {
+            --light: #1a1a2e;
+            --dark: #f8f9fa;
+            --text: #f0f0f0;
+            --card-bg: #252540;
+            --header-gradient: linear-gradient(135deg, #8a2387, #e94057, #f27121);
+        }
+
+        /* Y2K mode */
+        body.y2k-mode {
+            --primary: #ff00ff;
+            --secondary: #00ffff;
+            --accent: #ffff00;
+            --header-gradient: linear-gradient(135deg, #ff00ff, #00ffff);
+        }
+
+        /* Grunge mode */
+        body.grunge-mode {
+            --primary: #8b4513;
+            --secondary: #556b2f;
+            --accent: #d2691e;
+            --header-gradient: linear-gradient(135deg, #5d4037, #795548);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            overflow-x: hidden;
+            transition: background 0.5s ease;
+        }
+        
+        header {
+            background: var(--header-gradient);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .floating-items {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .floating-item {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s, color 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
+            color: var(--accent);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            position: relative;
+            animation: cardAppear 0.5s ease-out forwards;
+            opacity: 0;
+            perspective: 1000px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        @keyframes cardAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px) rotateY(5deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .product-image {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.05) rotateZ(1deg);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        
+        .product-description {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            color: #666;
+            flex-grow: 1;
+        }
+        
+        .product-price {
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+            margin-top: auto;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(30deg);
+            transition: all 0.6s ease;
+        }
+        
+        .btn:hover::after {
+            transform: rotate(30deg) translate(0, 100%);
+        }
+        
+        .save-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            color: var(--dark);
+            z-index: 2;
+        }
+        
+        .save-btn.saved {
+            color: var(--primary);
+        }
+        
+        .save-btn:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+        
+        .saved-items-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        
+        .saved-items-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .saved-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--accent);
+            color: var(--dark);
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background: var(--card-bg);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 800px;
+            width: 90%;
+            animation: modalAppear 0.3s ease-out;
+        }
+        
+        @keyframes modalAppear {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .close-modal {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: var(--primary);
+        }
+        
+        .saved-items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .empty-saved {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .urgency-banner {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            animation: pulse 2s infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        .emoji-animation {
+            position: fixed;
+            pointer-events: none;
+            font-size: 2rem;
+            z-index: 10000;
+            animation: floatUp 2s forwards;
+        }
+        
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(0.5);
+                opacity: 0;
+            }
+        }
+        
+        .fire-animation {
+            position: fixed;
+            pointer-events: none;
+            font-size: 3rem;
+            z-index: 10000;
+            animation: fireBurst 1s forwards;
+        }
+        
+        @keyframes fireBurst {
+            0% {
+                transform: scale(0.5);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* === NEW STYLES === */
+        .glitter-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: var(--glitter);
+            background-size: 200px;
+            opacity: 0;
+            z-index: 9999;
+            transition: opacity 0.5s;
+        }
+
+        body.glitter-mode .glitter-overlay {
+            opacity: 0.3;
+        }
+
+        .trending-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: linear-gradient(45deg, #ff00cc, #3333ff);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 2;
+            animation: pulse 1.5s infinite;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: var(--dark);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(20deg) scale(1.1);
+        }
+
+        .vip-deal {
+            background: linear-gradient(45deg, #ff00cc, #ff5500);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .countdown-item {
+            background: rgba(0,0,0,0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            min-width: 60px;
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            display: block;
+            margin-top: 0.3rem;
+        }
+
+        .theme-selector {
+            position: fixed;
+            bottom: 160px;
+            right: 30px;
+            background: var(--card-bg);
+            border-radius: 50px;
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            transform: scale(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-selector.active {
+            transform: scale(1);
+        }
+
+        .theme-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theme-option:hover {
+            transform: scale(1.2);
+        }
+
+        .theme-default { background: linear-gradient(45deg, #ff4d89, #6e45e2); }
+        .theme-dark { background: linear-gradient(45deg, #8a2387, #e94057); }
+        .theme-y2k { background: linear-gradient(45deg, #ff00ff, #00ffff); }
+        .theme-grunge { background: linear-gradient(45deg, #8b4513, #556b2f); }
+
+        @media (max-width: 900px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .theme-toggle {
+                bottom: 90px;
+                right: 20px;
+            }
+            
+            .theme-selector {
+                bottom: 150px;
+                right: 20px;
+            }
+        }
+    </style>
+
+<style amp-boilerplate="">
+  body {
+    -webkit-animation: -amp-start 8s steps(1,end) 0s 1 normal both;
+    -moz-animation: -amp-start 8s steps(1,end) 0s 1 normal both;
+    -ms-animation: -amp-start 8s steps(1,end) 0s 1 normal both;
+    animation: -amp-start 8s steps(1,end) 0s 1 normal both
+  }
+
+  @-webkit-keyframes -amp-start {
+    from {
+      visibility: hidden
+    }
+    to {
+      visibility: visible
+    }
+  }
+
+  @-moz-keyframes -amp-start {
+    from {
+      visibility: hidden
+    }
+    to {
+      visibility: visible
+    }
+  }
+
+  @-ms-keyframes -amp-start {
+    from {
+      visibility: hidden
+    }
+    to {
+      visibility: visible
+    }
+  }
+
+  @keyframes -amp-start {
+    from {
+      visibility: hidden
+    }
+    to {
+      visibility: visible
+    }
+  }
+</style>
+<noscript>
+<style amp-boilerplate="">
+    body {
+      -webkit-animation: none;
+      -moz-animation: none;
+      -ms-animation: none;
+      animation: none
+    }
+  </style>
+</noscript>
+<script async="" custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script></head>
+<body><amp-auto-ads data-ad-client="ca-pub-1325267672936174" type="adsense"></amp-auto-ads>
+<!-- GLITTER OVERLAY -->
+<div class="glitter-overlay"></div>
+<!-- THEME TOGGLE -->
+<div class="theme-toggle" id="themeToggle">
+<i class="fas fa-palette"></i>
+</div>
+<!-- THEME SELECTOR -->
+<div class="theme-selector" id="themeSelector">
+<div class="theme-option theme-default" data-theme="default"></div>
+<div class="theme-option theme-dark" data-theme="dark"></div>
+<div class="theme-option theme-y2k" data-theme="y2k"></div>
+<div class="theme-option theme-grunge" data-theme="grunge"></div>
+</div>
+<header>
+<div class="floating-items">
+<div class="floating-item" style="width: 50px; height: 50px; left: 10%; animation-delay: 0s;"></div>
+<div class="floating-item" style="width: 30px; height: 30px; left: 25%; animation-delay: 2s; animation-duration: 12s;"></div>
+<div class="floating-item" style="width: 40px; height: 40px; left: 50%; animation-delay: 4s;"></div>
+<div class="floating-item" style="width: 60px; height: 60px; left: 70%; animation-delay: 1s; animation-duration: 18s;"></div>
+<div class="floating-item" style="width: 20px; height: 20px; left: 85%; animation-delay: 3s; animation-duration: 10s;"></div>
+</div>
+<div class="header-content">
+<h1>🔥 GEN Z OUTFIT HAVEN 🔥</h1>
+<p class="subtitle">Where Style Meets Attitude - Shop the Vibe!</p>
+<div class="social-links">
+<a href="https://t.me/IM FINISHER" target="_blank"><i class="fab fa-telegram"></i></a>
+<a href="https://pin.it/5AOZFEEX9" target="_blank"><i class="fab fa-pinterest"></i></a>
+<a href="https://www.instagram.com/smile_issunaah?igsh=MWR5aWxoejh1NzAxNA==" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+</header>
+<div class="container">
+<!-- VIP DEAL COUNTDOWN -->
+<div class="vip-deal">
+<div>🔥 VIP FLASH DEAL! 🔥</div>
+<div>All items $1-$5 - LIMITED TIME ONLY!</div>
+<div class="countdown">
+<div class="countdown-item">
+<span id="hours">00</span>
+<span class="countdown-label">HOURS</span>
+</div>
+<div class="countdown-item">
+<span id="minutes">00</span>
+<span class="countdown-label">MIN</span>
+</div>
+<div class="countdown-item">
+<span id="seconds">00</span>
+<span class="countdown-label">SEC</span>
+</div>
+</div>
+</div>
+<div class="intro">
+<h2>🔥 TRENDING NOW 🔥</h2>
+<p>From vintage vibes to futuristic fashion, we've curated the coolest outfits and accessories that Gen Z is rocking right now. Click to shop your favorites!</p>
+</div>
+<div class="products-grid" id="productsGrid">
+<!-- Products will be inserted here by JavaScript -->
+</div>
+</div>
+<div class="saved-items-btn" id="savedItemsBtn">
+<i class="fas fa-heart"></i>
+<span class="saved-count" id="savedCount">0</span>
+</div>
+<div class="modal" id="savedItemsModal">
+<div class="modal-content">
+<div class="modal-header">
+<h2>Your Saved Items</h2>
+<span class="close-modal" id="closeModal">×</span>
+</div>
+<div class="saved-items-container" id="savedItemsContainer">
+<!-- Saved items will be inserted here by JavaScript -->
+</div>
+</div>
+</div>
+<footer>
+<p>© 2023 Gen Z Outfit Haven - Express Yourself!</p>
+<div class="footer-links">
+<a href="https://t.me/IM FINISHER" target="_blank">Contact</a>
+<a href="https://pin.it/5AOZFEEX9" target="_blank">Pinterest</a>
+<a href="https://www.instagram.com/smile_issunaah?igsh=MWR5aWxoejh1NzAxNA==" target="_blank">Instagram</a>
+</div>
+</footer>
+<script>
+        // Updated product data with descriptions
+        const products = [
+            {
+                id: 1,
+                title: "Vintage Band Tees",
+                description: "Rock the retro vibes with authentic distressed band tees that scream attitude!",
+                price: "$3.99",
+                image: "https://envs.sh/nf.jpg/IMG2025080223.jpg",
+                link: "https://bitli.in/1S4kh1u"
+            },
+            {
+                id: 2,
+                title: "Faux Leather Pants",
+                description: "Edgy and eco-friendly - slay the night without harming animals!",
+                price: "$4.99",
+                image: "https://envs.sh/nO.jpg/IMG20250802322.jpg",
+                link: "https://bitli.in/2SCvOYj"
+            },
+            {
+                id: 3,
+                title: "Y2K Graphic Tees",
+                description: "Bring back the 2000s with nostalgic graphics and oversized fits!",
+                price: "$2.99",
+                image: "https://envs.sh/ny.jpg/IMG20250802322.jpg",
+                link: "https://bitli.in/Goq5eTD"
+            },
+            {
+                id: 4,
+                title: "Oversized Blazer",
+                description: "Power dressing made cool - perfect for meetings or memes!",
+                price: "$4.49",
+                image: "https://envs.sh/nH.jpg/IMG20250802456.jpg",
+                link: "https://bitli.in/4cmL4uw"
+            },
+            {
+                id: 5,
+                title: "Biker Shorts",
+                description: "From gym to brunch - the ultimate versatile staple!",
+                price: "$1.99",
+                image: "https://envs.sh/ng.jpg/IMG20250802640.jpg",
+                link: "https://bitli.in/mF3KwXK"
+            },
+            {
+                id: 6,
+                title: "Chunky Dad Sneakers",
+                description: "Comfort meets style - walk all day in these hype beasts!",
+                price: "$4.99",
+                image: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80",
+                link: "https://bitli.in/xxJwRYC"
+            },
+            {
+                id: 7,
+                title: "Oversized Graphics Hoodies",
+                description: "Snuggle up in style - perfect for cozy days and colder nights!",
+                price: "$3.99",
+                image: "https://envs.sh/na.jpg/IMG20250802250.jpg",
+                link: "https://bitli.in/wZioAac"
+            },
+            {
+                id: 8,
+                title: "Sequined Mini Dress",
+                description: "Sparkle like a star - guaranteed to turn heads at any event!",
+                price: "$4.99",
+                image: "https://envs.sh/nm.jpg/IMG2025080295.jpg",
+                link: "https://bitli.in/oSls67D"
+            },
+            {
+                id: 9,
+                title: "Knee High Boots",
+                description: "Legs for days - the ultimate confidence boosters!",
+                price: "$5.00",
+                image: "https://envs.sh/nM.jpg/IMG20250802941.jpg",
+                link: "https://bitli.in/bxvT2ce"
+            },
+            {
+                id: 10,
+                title: "Fabric Paints",
+                description: "DIY your drip - customize your clothes like a pro!",
+                price: "$1.49",
+                image: "https://images.unsplash.com/photo-1585336261022-680e295ce3fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80",
+                link: "https://bitli.in/c3anXUi"
+            },
+            {
+                id: 11,
+                title: "Distressed Jeans",
+                description: "Effortlessly cool - ripped and ready for adventures!",
+                price: "$3.49",
+                image: "https://envs.sh/nN.jpg/IMG20250802339.jpg",
+                link: "https://bitli.in/iYVtQyi"
+            },
+            // NEW HAIR CARE PRODUCTS
+            {
+                id: 12,
+                title: "Curl Defining Cream",
+                description: "Lock in perfect spirals - frizz-free definition that lasts all day!",
+                price: "$4.99",
+                image: "https://envs.sh/n-.jpg/IMG2025080216.jpg",
+                link: "https://bitli.in/5z3NLoZ"
+            },
+            {
+                id: 13,
+                title: "Shine Spray",
+                description: "Instant gloss boost - get that red carpet glow in seconds!",
+                price: "$2.49",
+                image: "https://envs.sh/nX.jpg/IMG20250802339.jpg",
+                link: "https://bitli.in/HoXbKv0"
+            },
+            {
+                id: 14,
+                title: "Hair Plastic Bands",
+                description: "No-snag ties - keep your style tight without breakage!",
+                price: "$1.29",
+                image: "https://envs.sh/nV.jpg/IMG20250802478.jpg",
+                link: "https://bitli.in/Y4cbxN2"
+            },
+            {
+                id: 15,
+                title: "Detangling Spray",
+                description: "Brush through knots like butter - pain-free styling starts here!",
+                price: "$3.99",
+                image: "https://envs.sh/n6.jpg/IMG20250802538.jpg",
+                link: "https://bitli.in/z2fmw1i"
+            },
+            {
+                id: 16,
+                title: "Light Hold Hair Gel",
+                description: "Flexible control - shape without stiffness or crunch!",
+                price: "$2.99",
+                image: "https://envs.sh/nv.jpg/IMG20250802186.jpg",
+                link: "https://bitli.in/F6NotdR"
+            },
+            {
+                id: 17,
+                title: "Hair Glitter Spray",
+                description: "Sparkle on demand - festival-ready shine in seconds!",
+                price: "$4.49",
+                image: "https://envs.sh/nx.jpg/IMG20250802827.jpg",
+                link: "https://bitli.in/ZHsyKvV"
+            }
+        ];
+
+        // Initialize saved items from localStorage
+        let savedItems = JSON.parse(localStorage.getItem('savedOutfits')) || [];
+        
+        // DOM elements
+        const productsGrid = document.getElementById('productsGrid');
+        const savedItemsBtn = document.getElementById('savedItemsBtn');
+        const savedCount = document.getElementById('savedCount');
+        const savedItemsModal = document.getElementById('savedItemsModal');
+        const closeModal = document.getElementById('closeModal');
+        const savedItemsContainer = document.getElementById('savedItemsContainer');
+        const themeToggle = document.getElementById('themeToggle');
+        const themeSelector = document.getElementById('themeSelector');
+        
+        // Create emoji animation
+        function createEmojiAnimation(emoji, x, y) {
+            const emojiElement = document.createElement('div');
+            emojiElement.className = emoji === '❤️' ? 'emoji-animation' : 'fire-animation';
+            emojiElement.textContent = emoji;
+            emojiElement.style.left = `${x}px`;
+            emojiElement.style.top = `${y}px`;
+            document.body.appendChild(emojiElement);
+            
+            // Remove after animation completes
+            setTimeout(() => {
+                emojiElement.remove();
+            }, 2000);
+        }
+        
+        // Track affiliate link clicks
+        function trackAffiliateClick(event) {
+            // Only handle affiliate links
+            if (!event.target.closest('.btn')) return;
+            
+            // Prevent immediate navigation
+            event.preventDefault();
+            const link = event.target.href;
+            
+            // Get click position
+            const x = event.clientX;
+            const y = event.clientY;
+            
+            // Create fire animation
+            createEmojiAnimation('🔥', x, y);
+            
+            // Enable glitter mode
+            document.body.classList.add('glitter-mode');
+            
+            // After fire animation, create hearts and navigate
+            setTimeout(() => {
+                // Create multiple hearts
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        createEmojiAnimation('❤️', 
+                            x + (Math.random() * 100 - 50), 
+                            y + (Math.random() * 100 - 50)
+                        );
+                    }, i * 200);
+                }
+                
+                // Navigate to link after animations start
+                setTimeout(() => {
+                    window.open(link, '_blank');
+                    document.body.classList.remove('glitter-mode');
+                }, 300);
+            }, 500);
+            
+            // Track in localStorage
+            const itemId = event.target.closest('.product-card').querySelector('.save-btn').dataset.id;
+            const clicks = JSON.parse(localStorage.getItem('affiliateClicks')) || {};
+            clicks[itemId] = (clicks[itemId] || 0) + 1;
+            localStorage.setItem('affiliateClicks', JSON.stringify(clicks));
+        }
+        
+        // Generate original price for strikethrough
+        function getOriginalPrice(currentPrice) {
+            const priceNum = parseFloat(currentPrice.replace('$', ''));
+            const originalPrice = priceNum * (3 + Math.random() * 2).toFixed(2);
+            return `$${originalPrice.toFixed(2)}`;
+        }
+        
+        // Render products
+        function renderProducts() {
+            productsGrid.innerHTML = '';
+            
+            products.forEach((product, index) => {
+                const isSaved = savedItems.some(item => item.id === product.id);
+                
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.style.animationDelay = `${index * 0.1}s`;
+                productCard.style.transform = 'translateY(20px)';
+                
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.title}" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">${product.title}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <p class="product-price">${product.price} <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">${getOriginalPrice(product.price)}</span></p>
+                        <a href="${product.link}" target="_blank" class="btn">GRAB IT NOW!</a>
+                    </div>
+                    <button class="save-btn ${isSaved ? 'saved' : ''}" data-id="${product.id}">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                `;
+                
+                productsGrid.appendChild(productCard);
+            });
+            
+            // Animate cards
+            document.querySelectorAll('.product-card').forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+            
+            updateSavedCount();
+            addTrendingBadges();
+        }
+        
+        // Render saved items
+        function renderSavedItems() {
+            savedItemsContainer.innerHTML = '';
+            
+            if (savedItems.length === 0) {
+                savedItemsContainer.innerHTML = '<div class="empty-saved"><p>You haven\'t saved any items yet.</p></div>';
+                return;
+            }
+            
+            const savedGrid = document.createElement('div');
+            savedGrid.className = 'saved-items-grid';
+            
+            savedItems.forEach(item => {
+                const savedItem = document.createElement('div');
+                savedItem.className = 'product-card';
+                
+                savedItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">${item.title}</h3>
+                        <p class="product-description">${item.description}</p>
+                        <p class="product-price">${item.price} <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">${getOriginalPrice(item.price)}</span></p>
+                        <a href="${item.link}" target="_blank" class="btn">GRAB YOURS NOW!</a>
+                    </div>
+                    <button class="save-btn saved" data-id="${item.id}">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                `;
+                
+                savedGrid.appendChild(savedItem);
+            });
+            
+            savedItemsContainer.appendChild(savedGrid);
+        }
+        
+        // Update saved count
+        function updateSavedCount() {
+            savedCount.textContent = savedItems.length;
+        }
+        
+        // Toggle save item
+        function toggleSaveItem(productId) {
+            const product = products.find(p => p.id === productId);
+            
+            const index = savedItems.findIndex(item => item.id === productId);
+            
+            if (index === -1) {
+                // Add to saved
+                savedItems.push(product);
+            } else {
+                // Remove from saved
+                savedItems.splice(index, 1);
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('savedOutfits', JSON.stringify(savedItems));
+            
+            // Update UI
+            updateSavedCount();
+            renderProducts();
+            renderSavedItems();
+        }
+        
+        // Add trending badges to random products
+        function addTrendingBadges() {
+            const cards = document.querySelectorAll('.product-card');
+            
+            // Clear any existing badges
+            cards.forEach(card => {
+                const existingBadge = card.querySelector('.trending-badge');
+                if (existingBadge) existingBadge.remove();
+            });
+            
+            // Pick 3 random items
+            const trendingItems = [];
+            while (trendingItems.length < 3 && trendingItems.length < cards.length) {
+                const randomIndex = Math.floor(Math.random() * cards.length);
+                if (!trendingItems.includes(randomIndex)) {
+                    trendingItems.push(randomIndex);
+                }
+            }
+            
+            // Add badges
+            trendingItems.forEach(index => {
+                const badge = document.createElement('div');
+                badge.className = 'trending-badge';
+                badge.textContent = 'TRENDING 🔥';
+                cards[index].prepend(badge);
+            });
+        }
+        
+        // Event listeners
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.save-btn')) {
+                const productId = parseInt(e.target.closest('.save-btn').dataset.id);
+                toggleSaveItem(productId);
+            }
+        });
+        
+        savedItemsBtn.addEventListener('click', () => {
+            savedItemsModal.style.display = 'block';
+            renderSavedItems();
+        });
+        
+        closeModal.addEventListener('click', () => {
+            savedItemsModal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === savedItemsModal) {
+                savedItemsModal.style.display = 'none';
+            }
+        });
+        
+        // Add click listener to product grid
+        document.getElementById('productsGrid').addEventListener('click', trackAffiliateClick);
+        
+        // Also add to saved items modal when it's created
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('#savedItemsContainer .btn')) {
+                trackAffiliateClick(e);
+            }
+        });
+        
+        // Theme toggle
+        themeToggle.addEventListener('click', () => {
+            themeSelector.classList.toggle('active');
+        });
+        
+        // Theme selection
+        document.querySelectorAll('.theme-option').forEach(option => {
+            option.addEventListener('click', () => {
+                const theme = option.getAttribute('data-theme');
+                document.body.className = theme + '-mode';
+                themeSelector.classList.remove('active');
+            });
+        });
+        
+        // Initialize
+        renderProducts();
+        renderSavedItems();
+        
+        // --- COUNTDOWN USING LOCAL STORAGE ---
+        const countdownKey = "genz_flash_deal_timer";
+        const countdownDuration = 12 * 60 * 60 * 1000; // 12 hours in ms
+
+        function getOrCreateCountdownEndTime() {
+          const saved = JSON.parse(localStorage.getItem(countdownKey));
+          if (saved && saved.endTime && new Date(saved.endTime) > new Date()) {
+            return new Date(saved.endTime);
+          } else {
+            const endTime = new Date(Date.now() + countdownDuration);
+            localStorage.setItem(countdownKey, JSON.stringify({ endTime }));
+            return endTime;
+          }
+        }
+
+        const countdownEndTime = getOrCreateCountdownEndTime();
+
+        function updateCountdownDisplay() {
+          const now = new Date();
+          const distance = countdownEndTime - now;
+
+          let hours = 0, minutes = 0, seconds = 0;
+
+          if (distance > 0) {
+            hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+            minutes = Math.floor((distance / (1000 * 60)) % 60);
+            seconds = Math.floor((distance / 1000) % 60);
+          } else {
+            // Reset countdown when expired
+            const newEnd = new Date(Date.now() + countdownDuration);
+            localStorage.setItem(countdownKey, JSON.stringify({ endTime: newEnd }));
+            return location.reload();
+          }
+
+          document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+          document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+          document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+        }
+
+        // Run every second
+        setInterval(updateCountdownDisplay, 1000);
+        updateCountdownDisplay(); // Initialize now
+    </script>
+</body>
+</html>
