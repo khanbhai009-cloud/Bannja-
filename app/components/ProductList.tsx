@@ -292,3 +292,28 @@ return ( <div className="space-y-4"> <div className="flex gap-2 flex-wrap items-
 
 ); }
 
+// components/FilterBar.tsx
+export default function FilterBar({ search, category, setSearch, setCategory }) {
+  return (
+    <div className="flex flex-wrap gap-4 p-4 items-center">
+      <input
+        type="text"
+        placeholder="Search products..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="p-2 border rounded-md w-full md:w-auto"
+      />
+      <select
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
+        className="p-2 border rounded-md"
+      >
+        <option value="">All Categories</option>
+        <option value="Hair">Hair</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Accessories">Accessories</option>
+      </select>
+    </div>
+  );
+}
+
